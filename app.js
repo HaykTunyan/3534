@@ -155,6 +155,6 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 })
 
-app.listen(8000, function () {
-    console.log('http://localhost:8000');
+app.listen(process.env.PORT || 8000, function () {
+    console.log('Start...');
 })
