@@ -1,0 +1,44 @@
+/* Custom Style. */
+
+.map-container{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+
+.map-container iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+/* Dashboard Page Style */
+
+.dashboard-card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.dashboard-card .card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.dashboard-card .card .card-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.select-title {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
