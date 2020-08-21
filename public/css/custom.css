@@ -1,5 +1,16 @@
 /* Custom Style. */
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  background: #E5E5E5;
+}
+
 .map-container{
   overflow:hidden;
   padding-bottom:56.25%;
@@ -39,6 +50,98 @@
   font-size: 14px;
 }
 
+.collapsible-title {
+  color: #3D5170;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1.695px;
+  text-transform: uppercase;
+}
+
+.card-custom {
+  background: #FFFFFF;
+  box-shadow: 0px -1px 0px #E0E2E8, 0px 1px 0px #E0E2E8;
+}
+
+.cardcustom-header {
+  background: #FFFFFF;
+  background-color: #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.sistem-subtitle {
+  color: #979797;
+}
+
+.fa-bar-color {
+  color: #DADADA;
+}
+
+.active-link {
+  color: #007BFF;
+  border-left: 4px solid #007BFF !important;
+}
+
+.most-tbody {
+  font-size: 14px;
+  line-height: 55px;
+  letter-spacing: -0.805px;
+  color: #5A6169;
+}
+
+
+/* Font  */
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
 .font-18 {
   font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+
+.table-title {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1.695px;
+  text-transform: uppercase;
+  color: #3D5170;
+}
+
+.table-subtitle {
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: -0.805px;
+  color: #5A6169;
+}
+
+.chart-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.card-header:first-child {
+  border-radius: calc(20px) calc(20px) 0 0;
 }

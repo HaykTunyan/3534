@@ -17,7 +17,7 @@
     <link href="css/custom.css" rel="stylesheet">
 </head>
 
-<body class="grey lighten-3">
+<body class="lighten-3">
 
   <!--Main Navigation-->
   <header>
@@ -76,14 +76,9 @@
       
       <!-- logo wrapper -->
       <a class="logo-wrapper waves-effect">
-        <div class="d-flex">
-          <img src="img/svgSlider/Logo_Icon.svg" class="img-fluid mr-2" alt="LOGO ICON"/>
-          <img src="img/svgSlider/logo_ht_shapingpossibility.svg" class="img-fluid ml-2" alt="LOGO HT SHAPINGPROSSIBILITY" />
+        <div class="">
+          <img src="img/svgSlider/hyperetherm.svg" class="img-fluid mr-2" alt="HYPERETHERM"/>
         </div>
-        <div class="text-center">
-          <img src="img/svgSlider/Shards_Dashboards.png" class="img-fluid" alt="SHARDS DASHBOARDS">
-        </div>
-        
       </a>
 
       <!-- list group -->
@@ -97,7 +92,7 @@
           <i class="fas fa-digital-tachograph mr-3"></i>
           <span>Data Replicated</span>
         </a>
-        <a href="table.html" class="list-group-item list-group-item-action waves-effect">
+        <a href="charts.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-chart-bar mr-3"></i>
           <span>Charts</span>
         </a>
@@ -117,7 +112,7 @@
           <i class="fas fa-clipboard-list mr-3"></i>
           <span>EU List</span> 
         </a>
-        <a href="index.html" class="list-group-item list-group-item-action waves-effect">
+        <a href="index.html" class="list-group-item list-group-item-action waves-effect active-link">
           <i class="fas fa-table mr-3"></i> 
           <span>Torch table</span>
         </a>
@@ -192,8 +187,15 @@
     $(document).ready(function (e) {
 
         $.get('/item').then(function (data) {
-
-            data.forEach((elem, index) => {
+console.log({
+ "Starts that didn't transfer": data. avg_of_starts, 
+ "Starts that didn't transfer %": Math.round((data. avg_of_starts/data.avg_of_st)*100), 
+  'Starts that transferred': data.avg_of_transfers,
+  'Starts that transferred %': Math.round((data. avg_of_transfers/data.avg_of_st)*100), 
+  'Average number of start': data.avg_of_st,
+  });
+  // data. avg_of_arc_hours es mek@ der chka chartum vonc vor
+            data. data_array.forEach((elem, index) => {
                 $('table tbody').append(
                     '<tr>' +
                     '<th scope="row">' + parseInt(index + 1) + '</th>' +
