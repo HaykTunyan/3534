@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hypertherm</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Style custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
-    <!-- Style Custom style -->
-    <link href="css/custom.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Hypertherm</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Style custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <!-- Style Custom style -->
+  <link href="css/custom.css" rel="stylesheet">
 </head>
 
 <body class="lighten-3">
@@ -31,9 +31,21 @@
           
         </div> -->
 
-        <form class="form-inline d-flex justify-content-center md-form form-sm my-3">
-          <i class="fas fa-search" aria-hidden="true"></i>
-          <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+        <form id="filter" class="form-inline d-flex justify-content-center md-form form-sm my-3">
+          <button type="submit" class="btn-floating btn-sm btn-primary btn-rounded">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+          <input id="filter_data" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+            aria-label="Search">
+          <select id="filter_value" class="browser-default custom-select">
+            <option>Find By</option>
+            <option value="assetId">Asset ID</option>
+            <option value="UUID">UUID</option>
+            <option value="ManufacturingDate">Manufacturing Date</option>
+            <option value="manufacturer">Manufacturer</option>
+            <option value="serialNumber">Serial Number</option>
+          </select>
+
         </form>
 
         <!-- Collapse -->
@@ -73,11 +85,11 @@
 
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed ">
-      
+
       <!-- logo wrapper -->
       <a class="logo-wrapper waves-effect">
         <div class="">
-          <img src="img/svgSlider/hyperetherm.svg" class="img-fluid mr-2" alt="HYPERETHERM"/>
+          <img src="img/svgSlider/hyperetherm.svg" class="img-fluid mr-2" alt="HYPERETHERM" />
         </div>
       </a>
 
@@ -85,7 +97,7 @@
       <div class="list-group list-group-flush">
         <a href="dashboard.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-pencil-alt mr-3"></i>
-          
+
           <span>Summary report</span>
         </a>
         <a href="contactus.html" class="list-group-item list-group-item-action waves-effect">
@@ -104,29 +116,29 @@
           <i class="fas fa-sliders-h mr-3"></i>
           <span>Combinations</span>
         </a>
-        <a href="about.html" class="list-group-item list-group-item-action waves-effect"> 
+        <a href="about.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-chart-line mr-3"></i>
           <span>Criteria</span>
         </a>
         <a href="about.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-clipboard-list mr-3"></i>
-          <span>EU List</span> 
+          <span>EU List</span>
         </a>
         <a href="index.html" class="list-group-item list-group-item-action waves-effect active-link">
-          <i class="fas fa-table mr-3"></i> 
+          <i class="fas fa-table mr-3"></i>
           <span>Torch table</span>
         </a>
         <a href="about.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-file-code mr-3"></i>
           <span>Fault Code Table</span>
-          
+
         </a>
         <a href="about.html" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-tablets mr-3"></i> 
+          <i class="fas fa-tablets mr-3"></i>
           <span>Power supply table</span>
         </a>
         <a href="about.html" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-border-all mr-3"></i> 
+          <i class="fas fa-border-all mr-3"></i>
           <span>Cartridge table</span>
         </a>
       </div>
@@ -137,81 +149,110 @@
   </header>
   <!--Main Navigation-->
 
-<!--Main layout-->
-<main class="pt-5 mx-lg-3 h-100">
+  <!--Main layout-->
+  <main class="pt-5 mx-lg-3 h-100">
     <div class="container-fluid mt-5 ">
-        <table class="table table-bordered table-hover">
-            <!-- Table head -->
-            <thead class="blue lighten-4">
-                <tr>
-                    <th>#</th>
-                    <th class="text-center">Manufacturer</th>
-                    <th class="text-center">Asset ID</th>
-                    <th class="text-center">UUID</th>
-                    <th class="text-center">Number Of Starts</th>
-                    <th class="text-center">Number Of Transfers</th>
-                    <th class="text-center">Manufacturing Date</th>
-                    <th class="text-center">Part Number</th>
-                    <th class="text-center">Timestamp</th>
-                </tr>
-            </thead>
-            <!-- Table head -->
-    
-            <!-- Table body -->
-            <tbody>
-               
-            </tbody>
-            <!-- Table body -->
-        </table>
+      <table class="table table-bordered table-hover">
+        <!-- Table head -->
+        <thead class="blue lighten-4">
+          <tr>
+            <th>#</th>
+            <th class="text-center">Manufacturer</th>
+            <th class="text-center">Asset ID</th>
+            <th class="text-center">UUID</th>
+            <th class="text-center">Number Of Starts</th>
+            <th class="text-center">Number Of Transfers</th>
+            <th class="text-center">Manufacturing Date</th>
+            <th class="text-center">Part Number</th>
+            <th class="text-center">Timestamp</th>
+          </tr>
+        </thead>
+        <!-- Table head -->
+
+        <!-- Table body -->
+        <tbody>
+
+        </tbody>
+        <!-- Table body -->
+      </table>
     </div>
-</main>
+  </main>
 
 
 
 
-   
+
 </body>
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script src="js/custom.js"></script>
+<!-- Bootstrap tooltips -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script src="js/mdb.min.js"></script>
+<!-- Initializations -->
+<script src="js/custom.js"></script>
 <script>
-    $(document).ready(function (e) {
+  $('#filter').on('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    //alert(true);
+    let filter_value = $('#filter_value').val();
+    let filter_data = $('#filter_data').val();
+    // alert('http://localhost:8000/item?' + filter_value + '=' + filter_data);
+    $.get('item?' + filter_value + '=' + filter_data).then(function (data) {
+      //console.log(data.data_array);
+      $('table tbody tr').remove();
 
-        $.get('/item').then(function (data) {
-console.log({
- "Starts that didn't transfer": data. avg_of_starts, 
- "Starts that didn't transfer %": Math.round((data. avg_of_starts/data.avg_of_st)*100), 
-  'Starts that transferred': data.avg_of_transfers,
-  'Starts that transferred %': Math.round((data. avg_of_transfers/data.avg_of_st)*100), 
-  'Average number of start': data.avg_of_st,
+      data.data_array.forEach((elem, index) => {
+        $('table tbody').append(
+          '<tr>' +
+          '<th scope="row">' + parseInt(index + 1) + '</th>' +
+          '<td class="text-center">' + elem.manufacturer + '</td>' +
+          '<td class="text-center">' + elem.assetId + '</td>' +
+          '<td class="text-center">' + elem.UUID + '</td>' +
+          '<td class="text-center">' + elem.NumberOfStarts + '</td>' +
+          '<td class="text-center">' + elem.NumberOfTransfers + '</td>' +
+          '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
+          '<td class="text-center">' + elem.PartNumber + '</td>' +
+          '<td class="text-center">' + elem.timestamp + '</td>' +
+          '</tr>'
+        )
+      });
+    });
   });
-  // data. avg_of_arc_hours es mek@ der chka chartum vonc vor
-            data. data_array.forEach((elem, index) => {
-                $('table tbody').append(
-                    '<tr>' +
-                    '<th scope="row">' + parseInt(index + 1) + '</th>' +
-                    '<td class="text-center">' + elem.manufacturer + '</td>' +
-                    '<td class="text-center">' + elem.assetId + '</td>' +
-                    '<td class="text-center">' + elem.UUID + '</td>' +
-                    '<td class="text-center">' + elem.NumberOfStarts + '</td>' +
-                    '<td class="text-center">' + elem.NumberOfTransfers + '</td>' +
-                    '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
-                    '<td class="text-center">' + elem.PartNumber + '</td>' +
-                    '<td class="text-center">' + elem.timestamp + '</td>' +
-                    '</tr>'
-                )
-            });
-        })
+
+  $(document).ready(function (e) {
+
+    $.get('/item').then(function (data) {
+      console.log({
+        "Starts that didn't transfer": data.avg_of_starts,
+        "Starts that didn't transfer %": Math.round((data.avg_of_starts / data.avg_of_st) * 100),
+        'Starts that transferred': data.avg_of_transfers,
+        'Starts that transferred %': Math.round((data.avg_of_transfers / data.avg_of_st) * 100),
+        'Average number of start': data.avg_of_st,
+      });
+      // data. avg_of_arc_hours es mek@ der chka chartum vonc vor
+      data.data_array.forEach((elem, index) => {
+        $('table tbody').append(
+          '<tr>' +
+          '<th scope="row">' + parseInt(index + 1) + '</th>' +
+          '<td class="text-center">' + elem.manufacturer + '</td>' +
+          '<td class="text-center">' + elem.assetId + '</td>' +
+          '<td class="text-center">' + elem.UUID + '</td>' +
+          '<td class="text-center">' + elem.NumberOfStarts + '</td>' +
+          '<td class="text-center">' + elem.NumberOfTransfers + '</td>' +
+          '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
+          '<td class="text-center">' + elem.PartNumber + '</td>' +
+          '<td class="text-center">' + elem.timestamp + '</td>' +
+          '</tr>'
+        )
+      });
     })
+  })
 </script>
 
 </html>

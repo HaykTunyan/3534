@@ -99,6 +99,18 @@ app.get('/insert', function (req, res) {
 
 
 app.get('/item', function (req, res) {
+    let filterBy = '', value = '';
+    console.log(req.query);
+    if (!_.isEmpty(req.query)) {
+        console.log(true);
+        for (const key in req.query) {
+            filterBy = key.toString();
+            value = req.query[key].toString()
+        }
+        console.log(filterBy, value);
+    }
+
+
     let avg_of_starts = 0, avg_of_transfers = 0, avg_of_arc_hours = 0;
     axios.get('https://lib-mtconnect-cartridge.azurewebsites.net/assets').then(result => {
 
@@ -137,14 +149,29 @@ app.get('/item', function (req, res) {
             }
             TempDataArray.push(new_data);
         }
-        res.json({
-            data_array: TempDataArray,
 
-            avg_of_starts: Math.round(avg_of_starts / data.length),
-            avg_of_transfers: Math.round(avg_of_transfers / data.length),
-            avg_of_st: Math.round((avg_of_starts + avg_of_transfers) / data.length),
-            avg_of_arc_hours: Math.round(avg_of_arc_hours / data.length)
-        });
+       
+
+
+        if (_.isEmpty(req.query)) {
+            res.json({
+                data_array: TempDataArray,
+                avg_of_starts: Math.round(avg_of_starts / data.length),
+                avg_of_transfers: Math.round(avg_of_transfers / data.length),
+                avg_of_st: Math.round((avg_of_starts + avg_of_transfers) / data.length),
+                avg_of_arc_hours: Math.round(avg_of_arc_hours / data.length)
+            });
+        } else {
+            res.json({
+
+                data_array: TempDataArray.filter((elem) => {
+                    return elem[filterBy] == value
+                }),
+                //E0-04-01-D0-03-EF-6E-03
+
+            });
+        }
+
     })
 })
 
@@ -155,12 +182,11 @@ app.get('/item', function (req, res) {
 //  http://localhost:8000/item?UUID=
 //  http://localhost:8000/item?serialNumber=
 
-app.get('/:name', function (req, res) {
-    res.sendFile(path.join(__dirname, 'views', req.params.name));
-})
-
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
+})
+app.get('/:name', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', req.params.name));
 })
 
 app.listen(process.env.PORT || 8000, function () {

@@ -34,8 +34,12 @@
         </div> -->
 
         <form class="form-inline d-flex justify-content-center md-form form-sm my-3">
-          <i class="fas fa-search" aria-hidden="true"></i>
+
+          <button type="button" class="  btn-floating btn-sm btn-primary btn-rounded">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
           <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+
         </form>
 
         <!-- Collapse -->
@@ -354,29 +358,27 @@
             </div>
           </div>
 
-          <!-- chart content -->
+          <!-- Transfer Grid -->
 
           <!--Card-->
-          <div class="card mt-5">
-
+          <div class="card mt-5 card-transfer">
+            <div class="card-header">
+              <h3 class="card-title">
+                Average Transfers per Cartridge
+              </h3>
+            </div>
             <!--Card content-->
             <div class="card-body">
-
-              <canvas id="myChart"></canvas>
-
+              <canvas id="TransfersChart" ></canvas>
             </div>
-
           </div>
           <!--/.Card-->
         </div>
 
-
-      </div>
-
-       <!-- Chart Diagram row -->
+        
 
 
-
+        </div>
 
     </div>
   </main>

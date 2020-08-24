@@ -4,32 +4,26 @@
  new WOW().init();
  
      // Line in dashbord html
-     var ctx = document.getElementById("myChart").getContext('2d');
-     var myChart = new Chart(ctx, {
+     var ctx = document.getElementById("TransfersChart").getContext('2d');
+     var TransfersChart = new Chart(ctx, {
        type: 'bar',
        data: {
-         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-         datasets: [{
-           label: '# of Votes',
-           data: [12, 19, 3, 5, 2, 3],
-           backgroundColor: [
-             'rgba(255, 99, 132, 0.2)',
-             'rgba(54, 162, 235, 0.2)',
-             'rgba(255, 206, 86, 0.2)',
-             'rgba(75, 192, 192, 0.2)',
-             'rgba(153, 102, 255, 0.2)',
-             'rgba(255, 159, 64, 0.2)'
-           ],
-           borderColor: [
-             'rgba(255,99,132,1)',
-             'rgba(54, 162, 235, 1)',
-             'rgba(255, 206, 86, 1)',
-             'rgba(75, 192, 192, 1)',
-             'rgba(153, 102, 255, 1)',
-             'rgba(255, 159, 64, 1)'
-           ],
-           borderWidth: 1
-         }]
+         datasets: [
+         {
+           label: 'Name Blue ',
+           data : [ 
+             1100 
+            ],
+           backgroundColor: '#007BFF'           
+         },
+         {
+          label: 'Name Red',
+          data : [ 
+            900 
+          ],
+          backgroundColor: '#FF4169'
+         }
+        ]
        },
        options: {
          scales: {
@@ -41,6 +35,45 @@
          }
        }
      });
+
+// 
+var ctxBc = document.getElementById('bubbleChart').getContext('2d');
+var bubbleChart = new Chart(ctxBc, {
+  type: 'bubble',
+  data: {
+    datasets: [{
+      label: 'John',
+      data: [{
+        x: 3,
+        y: 7,
+        r: 10
+      }],
+      backgroundColor: "#ff6384",
+      hoverBackgroundColor: "#ff6384"
+    }, {
+      label: 'Peter',
+      data: [{
+        x: 5,
+        y: 7,
+        r: 10
+      }],
+      backgroundColor: "#44e4ee",
+      hoverBackgroundColor: "#44e4ee"
+    }, {
+      label: 'Donald',
+      data: [{
+        x: 7,
+        y: 7,
+        r: 10
+      }],
+      backgroundColor: "#62088A",
+      hoverBackgroundColor: "#62088A"
+    }]
+  }
+})
+
+// 
+
 
 
      // Regular map in contactus.html
@@ -61,5 +94,5 @@
           title: "New York"
         });
     }
-  
+ 
  
