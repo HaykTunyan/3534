@@ -197,7 +197,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Search Info</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button id="close_modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -328,13 +328,17 @@
 <script src="js/custom.js"></script>
 <script>
   $('#search').on('click', function (e) {
-
+    $('#Search').attr('fata-toggle', '');
 
     let filter_value = $('#filter_value').val();
     let filter_data = $('#filter_data').val();
 
     $.get('item?' + filter_value + '=' + filter_data).then(function (data) {
       if (data.data_array.length > 1) {
+
+        $('#close_modal').click();
+
+
         $('table tbody tr').remove();
         data.data_array.forEach((elem, index) => {
           $('#maintable').append(
@@ -360,6 +364,8 @@
         $('#SearchModal').on('show', function () {
           $('#SearchModal').trigger('focus')
         })
+
+
       }
     });
   });
@@ -383,7 +389,7 @@
         });
       })
     }
-  })
+  });
   $(document).ready(function (e) {
 
     $.get('/item').then(function (data) {
