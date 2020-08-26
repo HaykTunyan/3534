@@ -328,7 +328,6 @@
 <script src="js/custom.js"></script>
 <script>
   $('#search').on('click', function (e) {
-    $('#Search').attr('fata-toggle', '');
 
     let filter_value = $('#filter_value').val();
     let filter_data = $('#filter_data').val();
@@ -337,7 +336,6 @@
       if (data.data_array.length > 1) {
 
         $('#close_modal').click();
-
 
         $('table tbody tr').remove();
         data.data_array.forEach((elem, index) => {
