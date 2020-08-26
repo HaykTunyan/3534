@@ -100,14 +100,12 @@ app.get('/insert', function (req, res) {
 
 app.get('/item', function (req, res) {
     let filterBy = '', value = '';
-    console.log(req.query);
+
     if (!_.isEmpty(req.query)) {
-        console.log(true);
         for (const key in req.query) {
             filterBy = key.toString();
             value = req.query[key].toString()
         }
-        console.log(filterBy, value);
     }
 
 
@@ -150,7 +148,7 @@ app.get('/item', function (req, res) {
             TempDataArray.push(new_data);
         }
 
-       
+
 
 
         if (_.isEmpty(req.query)) {
@@ -163,12 +161,9 @@ app.get('/item', function (req, res) {
             });
         } else {
             res.json({
-
                 data_array: TempDataArray.filter((elem) => {
                     return elem[filterBy] == value
                 }),
-                //E0-04-01-D0-03-EF-6E-03
-
             });
         }
 

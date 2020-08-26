@@ -31,22 +31,36 @@
           
         </div> -->
 
-        <form id="filter" class="form-inline d-flex justify-content-center md-form form-sm my-3">
-          <button type="submit" class="btn-floating btn-sm btn-primary btn-rounded">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
-          <input id="filter_data" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
-          <select id="filter_value" class="browser-default custom-select">
-            <option>Find By</option>
-            <option value="assetId">Asset ID</option>
-            <option value="UUID">UUID</option>
-            <option value="ManufacturingDate">Manufacturing Date</option>
-            <option value="manufacturer">Manufacturer</option>
-            <option value="serialNumber">Serial Number</option>
-          </select>
+        <form class="form-inline d-flex md-form my-3">
+          <div class="form-row">
+            <div class="col">
+
+
+              <select id="filter_value" class="browser-default custom-select">
+                <option>Find By</option>
+                <option value="assetId">Asset ID</option>
+                <option value="UUID">UUID</option>
+                <option value="ManufacturingDate">Manufacturing Date</option>
+                <option value="manufacturer">Manufacturer</option>
+                <option value="serialNumber">Serial Number</option>
+                <option value="PartNumber">Serial Number</option>
+              </select>
+
+            </div>
+            <div class="col d-flex">
+
+
+              <input id="filter_data" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                aria-label="Search">
+              <a class="btn-floating btn-sm pt-2" id="search" data-toggle="modal" data-target="#SearchModal">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </a>
+
+            </div>
+          </div>
 
         </form>
+
 
         <!-- Collapse -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -133,7 +147,7 @@
           <span>Fault Code Table</span>
 
         </a>
-        <a href="about.html" class="list-group-item list-group-item-action waves-effect">
+        <a href="pawertable.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-tablets mr-3"></i>
           <span>Power supply table</span>
         </a>
@@ -160,17 +174,15 @@
             <th class="text-center">Manufacturer</th>
             <th class="text-center">Asset ID</th>
             <th class="text-center">UUID</th>
-            <th class="text-center">Number Of Starts</th>
-            <th class="text-center">Number Of Transfers</th>
+            <th class="text-center">Serial Number</th>
             <th class="text-center">Manufacturing Date</th>
             <th class="text-center">Part Number</th>
-            <th class="text-center">Timestamp</th>
           </tr>
         </thead>
         <!-- Table head -->
 
         <!-- Table body -->
-        <tbody>
+        <tbody id="maintable">
 
         </tbody>
         <!-- Table body -->
@@ -179,7 +191,126 @@
   </main>
 
 
+  <!-- Modal -->
+  <div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
 
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Data</th>
+                <th scope="col">Value</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Manufacturer</td>
+                <td id="manufacturer"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Asset ID</td>
+                <td id='assetId'></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>UUID</td>
+                <td id="UUID"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Serial Number</td>
+                <td id="serialNumber"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Part Number</td>
+                <td id="PartNumber"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Timestamp</td>
+                <td id="timestamp"></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Part Number Revision</td>
+                <td id="PartNumberRevision"></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Cartridge Type</td>
+                <td id="CartridgeType"></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Cartridge Design Revision</td>
+                <td id="CartridgeDesignRevision"></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Manufacturing Date</td>
+                <td id="ManufacturingDate"></td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td> Manufacturing Test Status</td>
+                <td id="ManufacturingTestStatus"></td>
+              </tr>
+
+              <tr>
+                <th scope="row">11</th>
+                <td> Arc Time</td>
+                <td id="ArcTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td> Pilot Time</td>
+                <td id="PilotTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">13</th>
+                <td> Transfer Time</td>
+                <td id="TransferTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">14</th>
+                <td> Number Of Starts</td>
+                <td id="NumberOfStarts"></td>
+              </tr>
+              <tr>
+                <th scope="row">15</th>
+                <td> Number Of Transfers</td>
+                <td id="NumberOfTransfers"></td>
+              </tr>
+              <tr>
+                <th scope="row">16</th>
+                <td> Faults</td>
+                <td id="Faults"></td>
+              </tr>
+              <tr>
+                <th scope="row">17</th>
+                <td> End Of Life Event Count</td>
+                <td id="EndOfLifeEventCount"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 </body>
@@ -196,58 +327,85 @@
 <!-- Initializations -->
 <script src="js/custom.js"></script>
 <script>
-  $('#filter').on('submit', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    //alert(true);
+  $('#search').on('click', function (e) {
+
+
     let filter_value = $('#filter_value').val();
     let filter_data = $('#filter_data').val();
-    // alert('http://localhost:8000/item?' + filter_value + '=' + filter_data);
-    $.get('item?' + filter_value + '=' + filter_data).then(function (data) {
-      //console.log(data.data_array);
-      $('table tbody tr').remove();
 
-      data.data_array.forEach((elem, index) => {
-        $('table tbody').append(
-          '<tr>' +
-          '<th scope="row">' + parseInt(index + 1) + '</th>' +
-          '<td class="text-center">' + elem.manufacturer + '</td>' +
-          '<td class="text-center">' + elem.assetId + '</td>' +
-          '<td class="text-center">' + elem.UUID + '</td>' +
-          '<td class="text-center">' + elem.NumberOfStarts + '</td>' +
-          '<td class="text-center">' + elem.NumberOfTransfers + '</td>' +
-          '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
-          '<td class="text-center">' + elem.PartNumber + '</td>' +
-          '<td class="text-center">' + elem.timestamp + '</td>' +
-          '</tr>'
-        )
-      });
+    $.get('item?' + filter_value + '=' + filter_data).then(function (data) {
+      if (data.data_array.length > 1) {
+        $('table tbody tr').remove();
+        data.data_array.forEach((elem, index) => {
+          $('#maintable').append(
+            '<tr>' +
+            '<th scope="row">' + parseInt(index + 1) + '</th>' +
+            '<td class="text-center">' + elem.manufacturer + '</td>' +
+            '<td class="text-center">' + elem.assetId + '</td>' +
+            '<td class="text-center">' + elem.UUID + '</td>' +
+            '<td class="text-center">' + elem.serialNumber + '</td>' +
+            '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
+            '<td class="text-center">' + elem.PartNumber + '</td>' +
+            '</tr>'
+          )
+        });
+      } else {
+
+        let keys = Object.keys(data.data_array[0]);
+        let elems = data.data_array[0];
+        keys.forEach(key => {
+          $('#' + key).html(elems[key]);
+        })
+
+        $('#SearchModal').on('show', function () {
+          $('#SearchModal').trigger('focus')
+        })
+      }
     });
   });
 
+  $(document).on('change', '#filter_data', function (e) {
+    if (e.target.value == '') {
+      $.get('/item').then(function (data) {
+
+        data.data_array.forEach((elem, index) => {
+          $('#maintable').append(
+            '<tr>' +
+            '<th scope="row">' + parseInt(index + 1) + '</th>' +
+            '<td class="text-center">' + elem.manufacturer + '</td>' +
+            '<td class="text-center">' + elem.assetId + '</td>' +
+            '<td class="text-center">' + elem.UUID + '</td>' +
+            '<td class="text-center">' + elem.serialNumber + '</td>' +
+            '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
+            '<td class="text-center">' + elem.PartNumber + '</td>' +
+            '</tr>'
+          )
+        });
+      })
+    }
+  })
   $(document).ready(function (e) {
 
     $.get('/item').then(function (data) {
-      console.log({
-        "Starts that didn't transfer": data.avg_of_starts,
-        "Starts that didn't transfer %": Math.round((data.avg_of_starts / data.avg_of_st) * 100),
-        'Starts that transferred': data.avg_of_transfers,
-        'Starts that transferred %': Math.round((data.avg_of_transfers / data.avg_of_st) * 100),
-        'Average number of start': data.avg_of_st,
-      });
-      // data. avg_of_arc_hours es mek@ der chka chartum vonc vor
+      // console.log({
+      //   "Starts that didn't transfer": data.avg_of_starts,
+      //   "Starts that didn't transfer %": Math.round((data.avg_of_starts / data.avg_of_st) * 100),
+      //   'Starts that transferred': data.avg_of_transfers,
+      //   'Starts that transferred %': Math.round((data.avg_of_transfers / data.avg_of_st) * 100),
+      //   'Average number of start': data.avg_of_st,
+      // });
+
       data.data_array.forEach((elem, index) => {
-        $('table tbody').append(
+        $('#maintable').append(
           '<tr>' +
           '<th scope="row">' + parseInt(index + 1) + '</th>' +
           '<td class="text-center">' + elem.manufacturer + '</td>' +
           '<td class="text-center">' + elem.assetId + '</td>' +
           '<td class="text-center">' + elem.UUID + '</td>' +
-          '<td class="text-center">' + elem.NumberOfStarts + '</td>' +
-          '<td class="text-center">' + elem.NumberOfTransfers + '</td>' +
+          '<td class="text-center">' + elem.serialNumber + '</td>' +
+
           '<td class="text-center">' + elem.ManufacturingDate + '</td>' +
           '<td class="text-center">' + elem.PartNumber + '</td>' +
-          '<td class="text-center">' + elem.timestamp + '</td>' +
           '</tr>'
         )
       });

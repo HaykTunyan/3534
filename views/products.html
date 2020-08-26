@@ -33,10 +33,40 @@
           
         </div> -->
 
-        <form class="form-inline d-flex justify-content-center md-form form-sm my-3">
-          <i class="fas fa-search" aria-hidden="true"></i>
-          <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <form id="filter" class="form-inline d-flex md-form my-3">
+            <div class="form-row">
+
+                <div class="col">
+              
+
+                    <select id="filter_value" class="browser-default custom-select">
+                      <option>Find By</option>
+                      <option value="assetId">Asset ID</option>
+                      <option value="UUID">UUID</option>
+                      <option value="ManufacturingDate">Manufacturing Date</option>
+                      <option value="manufacturer">Manufacturer</option>
+                      <option value="serialNumber">Serial Number</option>
+                    </select>
+                 
+                  </div>
+                  <div class="col d-flex">
+                    
+                   
+                    <input 
+                      id="filter_data" 
+                      class="form-control form-control-sm ml-3 w-75" 
+                      type="text" 
+                      placeholder="Search"
+                      aria-label="Search">
+                      <a class="btn-floating btn-sm pt-2" data-toggle="modal" data-target="#SearchModal">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                      </a>
+                      
+                  </div>
+
+            </div>
+  
+          </form> 
 
         <!-- Collapse -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -742,6 +772,128 @@
 
     </footer>
     <!--/.Footer-->
+
+<!-- Modal -->
+<div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Search Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+       
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Manufacturer</td>
+                    <td id="manufacturer"></td>
+                  </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Asset ID</td>
+                      <td id='assetId'></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>UUID</td>
+                      <td id="UUID"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Serial Number</td>
+                      <td id="serialNumber"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Part Number</td>
+                      <td id="PartNumber"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Timestamp</td>
+                      <td id="timestamp"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td>Part Number Revision</td>
+                      <td id="PartNumberRevision"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td>Cartridge Type</td>
+                      <td id="CartridgeType"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">8</th>
+                      <td>Cartridge Design Revision</td>
+                      <td id="CartridgeDesignRevision"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">9</th>
+                      <td>Manufacturing Date</td>
+                      <td id="ManufacturingDate"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">10</th>
+                      <td> Manufacturing Test Status</td>
+                      <td id="ManufacturingTestStatus"></td>
+                    </tr>
+                    
+                    <tr>
+                      <th scope="row">11</th>
+                      <td> Arc Time</td>
+                      <td id="ArcTime"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">12</th>
+                      <td> Pilot Time</td>
+                      <td id="PilotTime"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">13</th>
+                      <td> Transfer Time</td>
+                      <td id="TransferTime"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">14</th>
+                      <td> Number Of Starts</td>
+                      <td id="NumberOfStarts"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">15</th>
+                      <td> Number Of Transfers</td>
+                      <td id="NumberOfTransfers"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">16</th>
+                      <td> Faults</td>
+                      <td id="Faults"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">17</th>
+                      <td> End Of Life Event Count</td>
+                      <td id="EndOfLifeEventCount"></td>
+                    </tr>
+            </tbody>
+          </table>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
