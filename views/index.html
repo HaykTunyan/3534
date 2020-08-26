@@ -335,8 +335,8 @@
     $.get('item?' + filter_value + '=' + filter_data).then(function (data) {
       if (data.data_array.length > 1) {
 
+        $('#close_modal').click();
 
-        $(document).on('click', '#close_modal');
         $('table tbody tr').remove();
         data.data_array.forEach((elem, index) => {
           $('#maintable').append(
