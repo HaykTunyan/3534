@@ -159,3 +159,7 @@ body {
   text-transform: uppercase;
   color: #3D5170;
 }
+
+.form-content {
+  width: 300px;
+}

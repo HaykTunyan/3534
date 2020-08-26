@@ -27,12 +27,10 @@
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
       <div class="container-fluid">
-
-        <!-- Brand -->
         
         <form id="filter" class="form-inline d-flex md-form my-3">
           <div class="form-row">
-            <div class="col">
+            <div class="col form-content d-flex justify-content-center">
               
 
               <select id="filter_value" class="browser-default custom-select">
@@ -45,18 +43,22 @@
               </select>
            
             </div>
-            <div class="col d-flex">
+            <div class="col d-flex form-content">
               
              
               <input 
                 id="filter_data" 
-                class="form-control form-control-sm ml-3 w-75" 
+                class="form-control form-control-sm ml-3 w-100 font-14" 
                 type="text" 
                 placeholder="Search"
                 aria-label="Search">
-                <a class="btn-floating btn-sm pt-2" data-toggle="modal" data-target="#SearchModal">
-                  <i class="fas fa-search" aria-hidden="true"></i>
-                </a>
+                <div class="ml-2">
+
+                <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
+                <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded waves-effect">
+                  Search
+                </button>
+                </div>
                 
             </div>
           </div>
@@ -72,35 +74,9 @@
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <!-- Left -->
-          
-          <!-- <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect" href="dashboard.html">
-                Dashboard
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="about.html">
-                About
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link waves-effect" href="table.html" >
-                 Table
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul> -->
-
           <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons ml-auto">
-            <!-- <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li> -->
+          <!-- <ul class="navbar-nav nav-flex-icons ml-auto">
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -113,7 +89,7 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-          </ul>
+          </ul> -->
 
         </div>
 
@@ -125,24 +101,47 @@
     <div class="sidebar-fixed position-fixed ">
 
       <div class="list-group list-group-flush my-5">
-        <a href="dashboard.html" class="list-group-item  waves-effect">
-            <i class="fas fa-chart-pie mr-3"></i>Dashboard
-          </a>
-          <a href="users.html" class="list-group-item active list-group-item-action waves-effect">
-            <i class="fas fa-user mr-3"></i>Users
-          </a>
-          <a href="contactus.html" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-address-book mr-3"></i>Contact Us
-          </a>
-          <a href="charts.html" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-table mr-3"></i>Tables
-          </a>
-          <a href="products.html" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-map mr-3"></i>Products
-          </a>
-          <a href="about.html" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-info-circle mr-3"></i> About
-          </a>
+        <a href="dashboard.html" class="list-group-item list-group-item-action waves-effect ">
+          <i class="fas fa-pencil-alt mr-3"></i>       
+          <span>Summary report</span>
+        </a>
+        <a href="contactus.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-digital-tachograph mr-3"></i>
+          <span>Data Replicated</span>
+        </a>
+        <a href="charts.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-chart-bar mr-3"></i>
+          <span>Charts</span>
+        </a>
+        <a href="products.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-chart-pie mr-3"></i>
+          <span>Cartridge Types</span>
+        </a>
+        <a href="about.html" class="list-group-item list-group-item-action waves-effect"> 
+          <i class="fas fa-chart-line mr-3"></i>
+          <span>Criteria</span>
+        </a>
+        <a href="about.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-clipboard-list mr-3"></i>
+          <span>EU List</span> 
+        </a>
+        <a href="index.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-table mr-3"></i> 
+          <span>Torch table</span>
+        </a>
+        <a href="about.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-file-code mr-3"></i>
+          <span>Fault Code Table</span>
+          
+        </a>
+        <a href="pawertable.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-tablets mr-3"></i> 
+          <span>Power supply table</span>
+        </a>
+        <a href="about.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-border-all mr-3"></i> 
+          <span>Cartridge table</span>
+        </a>
       </div>
 
     </div>
@@ -316,63 +315,8 @@
   </main>
   <!--Main layout-->
 
-  <!--Footer-->
-  <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-
-
-    <hr class="my-4">
-
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus mr-3"></i>
-      </a>
-
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModal"
+      <!-- Modal -->
+     <div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModal"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -491,7 +435,7 @@
  
     </div>
   </div>
-</div>
+     </div>
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
