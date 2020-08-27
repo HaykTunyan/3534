@@ -173,7 +173,7 @@ app.get('/item', function (req, res) {
             // temp.splice(0);
         }
 
-        console.log(DataArray);
+        // console.log(DataArray);
         res.json({
             "data": DataArray
         });
