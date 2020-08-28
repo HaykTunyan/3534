@@ -9,7 +9,8 @@ let bodyparser = require('body-parser'),
     axios = require('axios').default,
     xml_js = require('xml-js'),
     cors = require('cors'),
-    path = require('path');
+    path = require('path'),
+    fs = require('fs');
 
 
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -177,35 +178,12 @@ app.get('/item', function (req, res) {
         res.json({
             "data": DataArray
         });
+
+        //fs.writeFileSync('./test.txt', DataArray);
+        // console.log(DataArray);
     })
 
 
-    // )
-    // TempDataArray.push(new_data);
-    //DataArray.push(temp);
-    //temp.splice(0);
-    // console.log(data);
-    // }
-
-
-    //res.send(TempDataArray);
-
-
-    // if (_.isEmpty(req.query)) {
-    //     res.json({
-    //         data_array: TempDataArray,
-    //         avg_of_starts: Math.round(avg_of_starts / data.length),
-    //         avg_of_transfers: Math.round(avg_of_transfers / data.length),
-    //         avg_of_st: Math.round((avg_of_starts + avg_of_transfers) / data.length),
-    //         avg_of_arc_hours: Math.round(avg_of_arc_hours / data.length)
-    //     });
-    // } else {
-    //     res.json({
-    //         data_array: TempDataArray.filter((elem) => {
-    //             return elem[filterBy] == value
-    //         }),
-    //     });
-    // }
 
 
 })

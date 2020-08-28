@@ -75,4 +75,4 @@ var bubbleChart = new Chart(ctxBc, {
 // Material Select Initialization
 $(document).ready(function() {
   $('.mdb-select').materialSelect();
-  });   
+});   

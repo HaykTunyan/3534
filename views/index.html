@@ -22,10 +22,6 @@
   <!-- Datatable -->
   <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css"/> -->
-  <!-- MDBootstrap Datatables  -->
-
-
-
 
 </head>
 
@@ -43,7 +39,7 @@
           
         </div> -->
 
-        <!-- <form id="filter" class="form-inline d-flex md-form my-3">
+        <form id="filter" class="form-inline d-flex md-form my-3">
           <div class="form-row">
             <div class="col form-content d-flex justify-content-center">
 
@@ -65,7 +61,7 @@
                 placeholder="Search" aria-label="Search">
               <div class="ml-2">
 
-                <i class="fas fa-search" aria-hidden="true"></i> 
+                <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
                 <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded waves-effect" id="search">
                   Search
                 </button>
@@ -74,7 +70,7 @@
             </div>
           </div>
 
-        </form> -->
+        </form>
 
 
         <!-- Collapse -->
@@ -176,11 +172,12 @@
 
   <!--Main layout-->
   <main class="pt-5 mx-lg-3 h-100">
-    <div class="container-fluid mt-5">
+    <div class="container-fluid my-5">
 
+      <!-- table live table -->
       <div class="row">
         <div class="col-12">
-          <div class="card card-body">
+          <div class="card card-body mt-5">
             <table id="Live" class="table table-striped" class="display" width="100%">
               <thead>
                 <tr>
@@ -194,7 +191,7 @@
                   <th class="th-sm text-center">Timestamp</th>
                 </tr>
               </thead>
-              <tbody id="arraytable">
+              <tbody id="livetable">
 
               </tbody>
               <tfoot>
@@ -215,13 +212,129 @@
       </div>
       <!--  -->
 
-
-
     </div>
   </main>
+  <!-- Main -->
 
+  <!-- Modal -->
+  <div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModal" aria-hidden="true"
+    hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Search Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"> Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Manufacturer</td>
+                <td id="manufacturer"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Asset ID</td>
+                <td id='assetId'></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>UUID</td>
+                <td id="UUID"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Serial Number</td>
+                <td id="serialNumber"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Part Number</td>
+                <td id="PartNumber"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Timestamp</td>
+                <td id="timestamp"></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Part Number Revision</td>
+                <td id="PartNumberRevision"></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Cartridge Type</td>
+                <td id="CartridgeType"></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Cartridge Design Revision</td>
+                <td id="CartridgeDesignRevision"></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Manufacturing Date</td>
+                <td id="ManufacturingDate"></td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td> Manufacturing Test Status</td>
+                <td id="ManufacturingTestStatus"></td>
+              </tr>
 
-
+              <tr>
+                <th scope="row">11</th>
+                <td> Arc Time</td>
+                <td id="ArcTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td> Pilot Time</td>
+                <td id="PilotTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">13</th>
+                <td> Transfer Time</td>
+                <td id="TransferTime"></td>
+              </tr>
+              <tr>
+                <th scope="row">14</th>
+                <td> Number Of Starts</td>
+                <td id="NumberOfStarts"></td>
+              </tr>
+              <tr>
+                <th scope="row">15</th>
+                <td> Number Of Transfers</td>
+                <td id="NumberOfTransfers"></td>
+              </tr>
+              <tr>
+                <th scope="row">16</th>
+                <td> Faults</td>
+                <td id="Faults"></td>
+              </tr>
+              <tr>
+                <th scope="row">17</th>
+                <td> End Of Life Event Count</td>
+                <td id="EndOfLifeEventCount"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
 
 </body>
 
@@ -240,7 +353,7 @@
 <!-- Bootstrap tooltips -->
 <script src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src=" js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script src="js/mdb.min.js"></script>
 <!-- Initializations -->
@@ -253,46 +366,12 @@
 
 
 <script>
-  // Material Design example
-  // $(document).ready(function () {
-
-  //   $('#Live').DataTable({
-  //     //   // "processing": true,
-  //     "serverSide": true,
-  //     ajax: {
-  //       'url': 'http://localhost:8000/item',
-  //       'type': 'GET'
-  //     }
-  //   });
-  // })
-
-
-  $('#Live').DataTable({
-    //   // "processing": true,
-    "serverSide": true,
-    ajax: {
-      'url': '/item',
-      'type': 'GET'
-    },
-
+  $(document).ready(function () {
+    $('#Live').DataTable({
+      serverside: true,
+      ajax: '/item'
+    });
   });
-
-
-  $('#Live_wrapper').find('label').each(function () {
-    $(this).parent().append($(this).children());
-  });
-  $('#Live .dataTables_filter').find('input').each(function () {
-    const $this = $(this);
-    $this.attr("placeholder", "Search");
-    $this.removeClass('form-control-sm');
-  });
-  $('#Live .dataTables_length').addClass('d-flex flex-row');
-  $('#DataTable .dataTables_filter').addClass('md-form');
-  $('#DataTable select').removeClass(
-    'custom-select custom-select-sm form-control form-control-sm');
-  $('#DataTable select').addClass('mdb-select');
-  $('#DataTable .mdb-select').materialSelect();
-  $('#DataTable .dataTables_filter').find('label').remove();
 </script>
 
 </html>
