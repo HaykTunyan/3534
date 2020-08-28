@@ -138,11 +138,15 @@ app.get('/item', function (req, res) {
                 data[i]._attributes.manufacturer,
                 data[i]._attributes.assetId,
                 data[i].ManufacturingData.UUID._text,
+                parseInt(data[i].OperationalData.ArcTime._text),
+                parseInt(data[i].OperationalData.PilotTime._text),
+                parseInt(data[i].OperationalData.TransferTime._text),
                 parseInt(data[i].OperationalData.NumberOfStarts._text),
                 parseInt(data[i].OperationalData.NumberOfTransfers._text),
                 data[i].ManufacturingData.ManufacturingDate._text,
                 data[i].ManufacturingData.PartNumber._text,
                 new Date(data[i]._attributes.timestamp)
+
             ])
 
             // DataArray.push([
