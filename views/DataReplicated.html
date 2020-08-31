@@ -171,11 +171,18 @@
                   <th class="th-sm text-center">Manufacturer</th>
                   <th class="th-sm text-center">Asset ID</th>
                   <th class="th-sm text-center">UUID</th>
+                  <th class="th-sm text-center">ArcTime</th>
+                  <th class="th-sm text-center">PilotTime</th>
+                  <th class="th-sm text-center">TransferTime</th>
                   <th class="th-sm text-center">Number Of Starts</th>
                   <th class="th-sm text-center">Number Of Transfers</th>
                   <th class="th-sm text-center">Manufacturing Date</th>
                   <th class="th-sm text-center">Part Number</th>
                   <th class="th-sm text-center">Timestamp</th>
+                  <th class="th-sm text-center">Serial Number</th>
+                  <th class="th-sm text-center">Test Status</th>
+                  <th class="th-sm text-center">End of Life</th>
+                  <th class="th-sm text-center">Faults</th>
                 </tr>
               </thead>
               <tbody id="livetable">
@@ -183,14 +190,21 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <th class="text-center">Manufacturer</th>
-                  <th class="text-center">Asset ID</th>
-                  <th class="text-center">UUID</th>
-                  <th class="text-center">Number Of Starts</th>
-                  <th class="text-center">Number Of Transfers</th>
-                  <th class="text-center">Manufacturing Date</th>
-                  <th class="text-center">Part Number</th>
-                  <th class="text-center">Timestamp</th>
+                  <th class="th-sm text-center">Manufacturer</th>
+                  <th class="th-sm text-center">Asset ID</th>
+                  <th class="th-sm text-center">UUID</th>
+                  <th class="th-sm text-center">ArcTime</th>
+                  <th class="th-sm text-center">PilotTime</th>
+                  <th class="th-sm text-center">TransferTime</th>
+                  <th class="th-sm text-center">Number Of Starts</th>
+                  <th class="th-sm text-center">Number Of Transfers</th>
+                  <th class="th-sm text-center">Manufacturing Date</th>
+                  <th class="th-sm text-center">Part Number</th>
+                  <th class="th-sm text-center">Timestamp</th>
+                  <th class="th-sm text-center">Serial Number</th>
+                  <th class="th-sm text-center">Test Status</th>
+                  <th class="th-sm text-center">End of Life</th>
+                  <th class="th-sm text-center">Faults</th>
                 </tr>
               </tfoot>
             </table>
@@ -235,10 +249,10 @@
 <script>
   $(document).ready(function () {
     $.get('/item',function(res){
-     // console.log(res);
       $('#Live').DataTable({
         serverside: true,
-        data: res.data
+        data: res.data,
+        "scrollX": true
       });
 
       

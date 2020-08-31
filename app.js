@@ -145,33 +145,36 @@ app.get('/item', function (req, res) {
                 parseInt(data[i].OperationalData.NumberOfTransfers._text),
                 data[i].ManufacturingData.ManufacturingDate._text,
                 data[i].ManufacturingData.PartNumber._text,
-                new Date(data[i]._attributes.timestamp)
-
+                new Date(data[i]._attributes.timestamp),
+                data[i]._attributes.serialNumber,
+                data[i].ManufacturingData.ManufacturingTestStatus._text,
+                parseInt(data[i].OperationalData.EndOfLifeEventCount._text),
+                data[i].OperationalData.Faults._attributes.faultCount > 0 ? FaulttoStringArray(data[i].OperationalData.Faults.Fault) : '',
             ])
 
             // DataArray.push([
 
-            //     data[i]._attributes.manufacturer,
-            //     data[i]._attributes.serialNumber,
-            //     new Date(data[i]._attributes.timestamp),
+            //-     data[i]._attributes.manufacturer, 
+            //-     data[i]._attributes.serialNumber,
+            //-     new Date(data[i]._attributes.timestamp),
             //     data[i]._attributes.deviceUuid,
-            //     data[i]._attributes.assetId,
+            //-     data[i]._attributes.assetId,
             //     data[i].ManufacturingData.Description._text,
-            //     data[i].ManufacturingData.UUID._text,
-            //     data[i].ManufacturingData.PartNumber._text,
+            //-     data[i].ManufacturingData.UUID._text,
+            //-     data[i].ManufacturingData.PartNumber._text, 
             //     data[i].ManufacturingData.PartNumberRevision._text,
             //     data[i].ManufacturingData.CartridgeType._text,
             //     data[i].ManufacturingData.CartridgeDesignRevision._text,
-            //     data[i].ManufacturingData.ManufacturingDate._text,
-            //     data[i].ManufacturingData.ManufacturingTestStatus._text,
+            //-     data[i].ManufacturingData.ManufacturingDate._text,
+            //-     data[i].ManufacturingData.ManufacturingTestStatus._text,
             //     data[i].OperationalData.Description._text,
-            //     parseInt(data[i].OperationalData.ArcTime._text),
-            //     parseInt(data[i].OperationalData.PilotTime._text),
-            //     parseInt(data[i].OperationalData.TransferTime._text),
-            //     parseInt(data[i].OperationalData.NumberOfStarts._text),
-            //     parseInt(data[i].OperationalData.NumberOfTransfers._text),
-            //     data[i].OperationalData.Faults._attributes.faultCount > 0 ? FaulttoStringArray(data[i].OperationalData.Faults.Fault) : '',
-            //     parseInt(data[i].OperationalData.EndOfLifeEventCount._text)
+            //-     parseInt(data[i].OperationalData.ArcTime._text),
+            //-     parseInt(data[i].OperationalData.PilotTime._text),
+            //-    parseInt(data[i].OperationalData.TransferTime._text),
+            //-     parseInt(data[i].OperationalData.NumberOfStarts._text),
+            //-     parseInt(data[i].OperationalData.NumberOfTransfers._text),
+            //-     data[i].OperationalData.Faults._attributes.faultCount > 0 ? FaulttoStringArray(data[i].OperationalData.Faults.Fault) : '',
+            //-     parseInt(data[i].OperationalData.EndOfLifeEventCount._text)
             // ])
             //  DataArray.push(temp);
             //temp.splice(0);
