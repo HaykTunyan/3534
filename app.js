@@ -121,9 +121,9 @@ app.get('/item', function (req, res) {
         let temp = [];
         let DataArray = [];
         for (let i = 0; i < data.length; i++) {
-            // avg_of_starts += parseInt(data[i].OperationalData.NumberOfStarts._text);
-            // avg_of_transfers += parseInt(data[i].OperationalData.NumberOfTransfers._text);
-            // avg_of_arc_hours += parseInt(data[i].OperationalData.ArcTime._text);
+            avg_of_starts += parseInt(data[i].OperationalData.NumberOfStarts._text);
+           avg_of_transfers += parseInt(data[i].OperationalData.NumberOfTransfers._text);
+            avg_of_arc_hours += parseInt(data[i].OperationalData.ArcTime._text);
 
             // Manufacturer	
             // Asset ID	
@@ -180,7 +180,8 @@ app.get('/item', function (req, res) {
 
         // console.log(DataArray);
         res.json({
-            "data": DataArray
+            "data": DataArray,
+            "chart":[avg_of_starts,avg_of_transfers,avg_of_arc_hours]
         });
 
         //fs.writeFileSync('./test.txt', DataArray);
@@ -200,7 +201,7 @@ app.get('/item', function (req, res) {
 //  http://localhost:8000/item?serialNumber=
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+    res.sendFile(path.join(__dirname, 'views', 'DataReplicated.html'));
 })
 app.get('/:name', function (req, res) {
     res.sendFile(path.join(__dirname, 'views', req.params.name));

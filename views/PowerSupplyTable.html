@@ -80,7 +80,7 @@
 
           <span>Summary report</span>
         </a>
-        <a href="contactus.html" class="list-group-item list-group-item-action waves-effect">
+        <a href="DataReplicated.html" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-digital-tachograph mr-3"></i>
           <span>Data Replicated</span>
         </a>
@@ -100,7 +100,7 @@
           <i class="fas fa-clipboard-list mr-3"></i>
           <span>EU List</span>
         </a>
-        <a href="index.html" class="list-group-item list-group-item-action waves-effect active-link">
+        <a href="TorchTable.html" class="list-group-item list-group-item-action waves-effect active-link">
           <i class="fas fa-table mr-3"></i>
           <span>Torch table</span>
         </a>
@@ -145,7 +145,7 @@
                   <th class="th-sm text-center" scope="col">Short Description</th>
                 </tr>
               </thead>
-              <tbody >
+              <tbody>
                 <tr>
                   <th scope="row" class="text-center">1</th>
                   <td class="text-center">0x09</td>
@@ -167,7 +167,8 @@
                   <td class="text-center">0x09</td>
                   <td class="text-center">SYNC 105A 230/400 CE </td>
                   <td class="text-center">059703</td>
-                  <td class="text-center">Powermax105 SYNC power supply, 230-400V 3-PH, CE, plus CPC and serial ports</td>
+                  <td class="text-center">Powermax105 SYNC power supply, 230-400V 3-PH, CE, plus CPC and serial ports
+                  </td>
                   <td class="text-center">Powermax105 SYNC</td>
                 </tr>
                 <tr>
@@ -191,7 +192,8 @@
                   <td class="text-center">0x08</td>
                   <td class="text-center">SYNC 105A CSA </td>
                   <td class="text-center">059706</td>
-                  <td class="text-center">Powermax105 SYNC power supply, 200-600V 3-PH, CSA, plus CPC and serial ports</td>
+                  <td class="text-center">Powermax105 SYNC power supply, 200-600V 3-PH, CSA, plus CPC and serial ports
+                  </td>
                   <td class="text-center">Powermax105 SYNC</td>
                 </tr>
                 <tr>
@@ -223,7 +225,8 @@
                   <td class="text-center">0x0A</td>
                   <td class="text-center">G5 105A 400 CE</td>
                   <td class="text-center">059710</td>
-                  <td class="text-center">Powermax105 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial ports</td>
+                  <td class="text-center">Powermax105 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial
+                    ports</td>
                   <td class="text-center">Powermax105 SYNC</td>
                 </tr>
                 <tr>
@@ -247,7 +250,8 @@
                   <td class="text-center">0x01</td>
                   <td class="text-center">SYNC 65A CE </td>
                   <td class="text-center">083370</td>
-                  <td class="text-center">Powermax65 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial ports</td>
+                  <td class="text-center">Powermax65 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial ports
+                  </td>
                   <td class="text-center">Powermax65 SYNC</td>
                 </tr>
                 <tr>
@@ -311,7 +315,8 @@
                   <td class="text-center">0x03</td>
                   <td class="text-center">SYNC 85A CE </td>
                   <td class="text-center">087212</td>
-                  <td class="text-center">Powermax85 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial ports</td>
+                  <td class="text-center">Powermax85 SYNC power supply, 380-400V 3-PH, CE/CCC, plus CPC and serial ports
+                  </td>
                   <td class="text-center">Powermax85 SYNC</td>
                 </tr>
                 <tr>
@@ -431,16 +436,18 @@
   <script src="js/charts.js"></script>
 
   <script src="js/addons/datatables.min.js" type="text/javascript"></script>
-<script src="js/addons/datatables-select.min.js" type="text/javascript"></script>
-  <script type="javascript" charset="utf8" src="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"></script>
-  <script type="javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="js/addons/datatables-select.min.js" type="text/javascript"></script>
 
 
- 
- <script>
-   $(document).ready(function(){
-     $('#PowerSupplyTable').DataTable();
-   })
+  <script>
+    $(document).ready(function () {
+      $('#PowerSupplyTable').DataTable({
+        "columnDefs": [{
+          "targets": [0, 1, 2, 4, 5],
+          "searchable": false
+        }]
+      });
+    })
   </script>
 </body>
 

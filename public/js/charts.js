@@ -1,4 +1,21 @@
 // Charts.js
+let chart=sessionStorage;
+    let full=parseInt(chart.getItem('avg_of_starts'))+parseInt(chart.getItem('avg_of_transfers')), full_p=100,
+    starts=parseInt(chart.getItem('avg_of_starts')),
+    starts_p=parseInt(chart.getItem('avg_of_transfers'))/(parseInt(chart.getItem('avg_of_starts')))*100,
+    transfer=parseInt(chart.getItem('avg_of_transfers')),
+    transfer_p=100-parseInt((parseInt(chart.getItem('avg_of_transfers'))/(parseInt(chart.getItem('avg_of_starts')))));
+
+    $('#full').text(full);
+    $('#full_p').text(full_p+'%');
+
+    $('#starts').text(starts.toString());
+    $('#starts_p').text(starts_p.toPrecision(4));
+
+    $('#transfer').text(transfer.toString());
+    $('#transfer_p').text((100-starts_p).toPrecision(2));
+
+
 
 var ctxP = document.getElementById("labelChart").getContext('2d');
 var myPieChart = new Chart(ctxP, {
@@ -7,13 +24,13 @@ var myPieChart = new Chart(ctxP, {
   data: {
     labelTitle : " Starts that transferred ", 
     labels: [
-        "Starts that didn't transfer 50%", 
-        "Starts that transferred 50%"
+        "Starts that didn't transfer "+ parseInt(starts_p)+'%', 
+        "Starts that transferred "+parseInt((100-starts_p))+'%'
     ],
     datasets: [{
       data: [
-        50, 
-        50,
+        parseInt(starts_p.toPrecision(4)), 
+        parseInt((100-starts_p).toPrecision(2)),
         ],
       backgroundColor: [
         "#EC1424", 

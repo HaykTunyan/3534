@@ -194,21 +194,28 @@
                       Number
                     </th>
                     <th scope="col" class="font-weight-bold table-title">
-                      Number
-                    </th>
-                    <th scope="col" class="font-weight-bold table-title">
                       Percentage
                     </th>
                   </tr>
                 </thead>
                 <tbody class="most-tbody" id="transferchart">
                   <tr>
-                    <th class="table-title"> Average number of starts</th>
-                    <td class="table-subtitle">1484</td>
-                    <td class="table-subtitle">1484</td>
-                    <td class="table-subtitle">100%</td>
+                    <th class="table-title"> Full</th>
+                    <td class="table-subtitle" id="full"></td>
+                    <td class="table-subtitle" id="full_p"></td>
                   </tr>
                   <tr>
+                    <th class="table-title"> Average number of starts</th>
+                    <td class="table-subtitle" id="starts"></td>
+                    <td class="table-subtitle" id="starts_p"></td>
+                  </tr>
+                  <tr>
+                    <th class="table-title"> Starts that transferred</th>
+                    <td class="table-subtitle" id="transfer"></td>
+                    <td class="table-subtitle" id="transfer_p"></td>
+                  </tr>
+                  
+                  <!-- <tr>
                     <th class="table-title">Starts that transferred: 745 starts</th>
                     <td class="table-subtitle">745</td>
                     <td class="table-subtitle">745</td>
@@ -219,7 +226,7 @@
                     <td class="table-subtitle">739</td>
                     <td class="table-subtitle">739</td>
                     <td class="table-subtitle">50%</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -504,6 +511,26 @@ aria-hidden="true">
 
   <!--Google Maps-->
   <script src="https://maps.google.com/maps/api/js"></script>
+  
+  <script>
+    // $(document).ready(function(){
+    // let chart=sessionStorage;
+    // let full=parseInt(chart.getItem('avg_of_starts'))+parseInt(chart.getItem('avg_of_transfers')), full_p=100,
+    // starts=parseInt(chart.getItem('avg_of_starts')),
+    // starts_p=parseInt(chart.getItem('avg_of_transfers'))/(parseInt(chart.getItem('avg_of_starts')))*100,
+    // transfer=parseInt(chart.getItem('avg_of_transfers')),
+    // transfer_p=100-parseInt((parseInt(chart.getItem('avg_of_transfers'))/(parseInt(chart.getItem('avg_of_starts')))));
+
+    // $('#full').text(full);
+    // $('#full_p').text(full_p+'%');
+
+    // $('#starts').text(starts.toString());
+    // $('#starts_p').text(starts_p.toPrecision(4));
+
+    // $('#transfer').text(transfer.toString());
+    // $('#transfer_p').text((100-starts_p).toPrecision(2));
+    // })
   </script>
+
 </body>
 </html>
